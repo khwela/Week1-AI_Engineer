@@ -1,3 +1,5 @@
+
+//Crypo Data
 crypto_data = {
     "Bitcoin": {
         "price": 45000,
@@ -75,12 +77,12 @@ while True:
     else:
         matched = False
         for name in crypto_data:
-            if crypto_name.lower() in name.lower():  # Case-insensitive partial match
+            if crypto_name.lower() in name.lower(): 
                 coin = crypto_data[name]
                 print(f"Did you mean {name.capitalize()}?")
                 print(f"{name.capitalize()} is a popular cryptocurrency with a current price of ${coin['price']}.")
                 print(f"About {name.capitalize()}: {coin['description']}")
                 matched = True
                 break
-        if not matched:  # This block should only execute if no match is found
+        if not matched:  
             print("Sorry, I couldn't find any information on that cryptocurrency. Try 'Bitcoin', 'Ethereum', 'Dogecoin', 'Litecoin', 'Ripple', 'Cardano', or 'Polkadot'.")
