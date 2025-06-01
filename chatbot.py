@@ -1,5 +1,5 @@
 
-//Crypo Data
+#Crypto Data
 crypto_data = {
     "Bitcoin": {
         "price": 45000,
@@ -68,13 +68,16 @@ while True:
         break
     response = get_crypto_info(crypto_name)
     print(response)
-    
+
+    #If there's no exact match, this checks for partial matches, if found, it shows a friendly suggestion and details.
+    #If no match found, shows an error message.
     print("--------------------------------------------------------------------")
     if crypto_name in crypto_data:
         coin = crypto_data[crypto_name]
         print(f"{crypto_name.capitalize()} is a popular cryptocurrency with a current price of ${coin['price']}.")
         print(f"About {crypto_name.capitalize()}: {coin['description']}")
     else:
+
         matched = False
         for name in crypto_data:
             if crypto_name.lower() in name.lower(): 
